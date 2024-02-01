@@ -8,6 +8,8 @@ import NotFound from '../NotFound'
 import SignIn from '../SignIn'
 import './App.css'
 import Navbar from '../../Components/Navbar'
+import Layout from '../../Components/Layout'
+import {ShoppingCartProvider} from '../../Context'
 
 
 const AppRoutes = () => {
@@ -25,10 +27,15 @@ const AppRoutes = () => {
 
 const App =() => {
   return (
-  <BrowserRouter>
-    <AppRoutes />
-    <Navbar />
-  </BrowserRouter>
+  <ShoppingCartProvider>
+      <BrowserRouter>
+        <Layout>
+        <AppRoutes />
+        <Navbar />
+        </Layout>
+      </BrowserRouter>
+  </ShoppingCartProvider>
+
   )
 }
 

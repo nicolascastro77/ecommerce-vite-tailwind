@@ -1,5 +1,7 @@
 import React from 'react'
+import { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
+import {ShoppingCartContext} from '../../Context'
 
 let menu1 = [
     {
@@ -62,17 +64,20 @@ let menu2 = [
     {
         to: '/shoppcar',
         text: '🛒',
-        className: ''
+        className: 'cart'
     },
 ]
 
 
 
 const Navbar = () => {
+    
+    const context = useContext(ShoppingCartContext)
+
     const textDecoration = 'underline underline-offset-4 text-red-800'
 
   return (
-    <nav className="flex items-center justify-between w-full py-5 px-8 text-sm">
+    <nav className="flex items-center justify-between w-full fixed z-10 top-0 py-5 px-8 text-sm shadow-lg  bg-slate-50">
         <ul className='flex gap-3 items-center'>
             {menu1.map(link => (
                 <li 
@@ -100,6 +105,7 @@ const Navbar = () => {
                 className={({isActive}) => isActive ? 'activeClass' : undefined }
               >
                 {link.text}
+                {link.className === 'cart' && <span>{context.count}</span>}
               </NavLink>
             ) : (
               <span>{link.text}</span>
