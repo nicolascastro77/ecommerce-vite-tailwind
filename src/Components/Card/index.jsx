@@ -1,6 +1,7 @@
 import React from 'react'
 import { useContext } from 'react';
 import { IoIosAddCircle } from "react-icons/io";
+import { BsFillCartCheckFill } from "react-icons/bs";
 
 import {ShoppingCartContext} from '../../Context'
 
@@ -8,7 +9,7 @@ import {ShoppingCartContext} from '../../Context'
 
 function Card(data) {
 
-  const { count, setCount, openModal, setProductToShow } = useContext(ShoppingCartContext)
+  const { count, setCount, openModal, setProductToShow, setCartProducts, cartProducts, openCheckoutSideMenu} = useContext(ShoppingCartContext)
 
 
   const showProduct = (productDetail) => {
@@ -16,7 +17,43 @@ function Card(data) {
     setProductToShow(productDetail)
   }
 
+  const addProductToCart = (productData) => {
+    setCount(count + 1); 
+    setCartProducts([...cartProducts, productData])
+    openCheckoutSideMenu()
+    console.log(cartProducts);
+  }
 
+
+
+  const renderIcon = (id) => {
+    const isInCart = cartProducts.filter(product => product.id === id ).length > 0
+
+    if (isInCart) {
+      return (
+        <div>
+          <button  onClick={(e) => {
+                      e.stopPropagation(); 
+                    }}>
+              <BsFillCartCheckFill className="absolute top-0 right-0 flex justify-center items-center w-7 h-7 m-0 text-green-500" />
+          </button>
+        </div>
+      )
+    }
+    else {
+      return (
+        <div>
+          <button  onClick={(e) => {
+                      e.stopPropagation(); 
+                      addProductToCart(data.data);
+                    }}>
+              <IoIosAddCircle className="absolute top-0 right-0 flex justify-center items-center w-7 h-7 m-0 text-gray-200 transition-colors hover:text-gray-500" />
+          </button>
+        </div>
+      )
+    }
+
+  }
 
     return (
         <div 
@@ -29,12 +66,7 @@ function Card(data) {
               {data.data.category}
             </span>
             <img className="w-full h-full object-contain rounded-lg" src={data.data.image} alt="Headphones" />
-            <button  onClick={(e) => {
-                        e.stopPropagation(); 
-                        setCount(count + 1); 
-                      }}>
-                <IoIosAddCircle className="absolute top-0 right-0 flex justify-center items-center w-9 h-9 m-0 text-yellow-200 transition-colors hover:text-yellow-500" />
-            </button>
+          {renderIcon(data.data.id)}
           </figure>
           <p className="flex justify-between">
             <span className="text-sm font-light line-clamp-2">

@@ -10,6 +10,7 @@ import './App.css'
 import Navbar from '../../Components/Navbar'
 import Layout from '../../Components/Layout'
 import {ShoppingCartProvider} from '../../Context'
+import CheckoutSideMenu from '../../Components/Checkout SideMenu'
 
 
 const AppRoutes = () => {
@@ -32,10 +33,10 @@ const App =() => {
         <Layout>
         <AppRoutes />
         <Navbar />
+        <CheckoutSideMenu />
         </Layout>
       </BrowserRouter>
   </ShoppingCartProvider>
-
   )
 }
 
