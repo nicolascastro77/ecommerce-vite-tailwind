@@ -11,21 +11,23 @@ import Layout from "../../Components/Layout";
 import { ShoppingCartContext, ShoppingCartProvider } from "../../Context";
 import CheckoutSideMenu from "../../Components/Checkout SideMenu";
 
+const rootPath = "/repostireio-ecommerce-vite-tailwind";
+
 const AppRoutes = () => {
   let routes = useRoutes([
-    { path: "/", element: <Home /> },
-    { path: "/jewelery", element: <Home /> },
-    { path: "/electronics", element: <Home /> },
-    { path: "/mens-clothing", element: <Home /> },
-    { path: "/womens-clothing", element: <Home /> },
-    { path: "/othes", element: <Home /> },
-    { path: "/my-order", element: <MyOrder /> },
-    { path: "/my-orders", element: <MyOrders /> },
-    { path: "/my-orders/last", element: <MyOrder /> },
-    { path: "/my-orders/:id", element: <MyOrder /> },
-    { path: "/my-account", element: <MyAccount /> },
-    { path: "/sign-in", element: <SignIn /> },
-    { path: "/*", element: <NotFound /> },
+    { path: `${rootPath}/`, element: <Home /> },
+    { path: `${rootPath}/jewelery`, element: <Home /> },
+    { path: `${rootPath}/electronics`, element: <Home /> },
+    { path: `${rootPath}/mens-clothing`, element: <Home /> },
+    { path: `${rootPath}/womens-clothing`, element: <Home /> },
+    { path: `${rootPath}/othes`, element: <Home /> },
+    { path: `${rootPath}/my-order`, element: <MyOrder /> },
+    { path: `${rootPath}/my-orders`, element: <MyOrders /> },
+    { path: `${rootPath}/my-orders/last`, element: <MyOrder /> },
+    { path: `${rootPath}/my-orders/:id`, element: <MyOrder /> },
+    { path: `${rootPath}/my-account`, element: <MyAccount /> },
+    { path: `${rootPath}/sign-in`, element: <SignIn /> },
+    { path: `${rootPath}/*`, element: <NotFound /> },
   ]);
   return routes;
 };
