@@ -11,7 +11,7 @@ import Layout from "../../Components/Layout";
 import { ShoppingCartContext, ShoppingCartProvider } from "../../Context";
 import CheckoutSideMenu from "../../Components/Checkout SideMenu";
 
-const rootPath = "/repostireio-ecommerce-vite-tailwind";
+const rootPath = "/ecommerce-vite-tailwind";
 
 const AppRoutes = () => {
   let routes = useRoutes([
