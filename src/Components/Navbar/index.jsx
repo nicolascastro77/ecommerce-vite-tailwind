@@ -105,7 +105,7 @@ const Navbar = () => {
                 className={({isActive}) => isActive ? 'activeClass' : undefined }
               >
                 {link.text}
-                {link.className === 'cart' && <span>{context.count}</span>}
+                {link.className === 'cart' && <span>{context.cartProducts.length}</span>}
               </NavLink>
             ) : (
               <span>{link.text}</span>

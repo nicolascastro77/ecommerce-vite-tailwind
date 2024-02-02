@@ -18,7 +18,7 @@ function Card(data) {
   }
 
   const addProductToCart = (productData) => {
-    setCount(count + 1); 
+    // setCount(count + 1); 
     setCartProducts([...cartProducts, productData])
     openCheckoutSideMenu()
     console.log(cartProducts);
