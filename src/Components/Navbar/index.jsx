@@ -2,12 +2,14 @@ import React from 'react'
 import { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import {ShoppingCartContext} from '../../Context'
+import { CiShop } from "react-icons/ci";
+
 
 let menu1 = [
     {
         to: '/',
-        text: 'Shopi',
-        className: 'font-semibold text-lg'
+        text: 'Shop',
+        className: 'font-semibold text-lg logo mr-8'
     },
     {
         to: '/',
@@ -15,8 +17,8 @@ let menu1 = [
         className: ''
     },
     {
-        to: '/clothes',
-        text: 'clothes',
+        to: '/jewelery',
+        text: 'jewelery',
         className: ''
     },
     {
@@ -25,18 +27,13 @@ let menu1 = [
         className: ''
     },
     {
-        to: '/furnitures',
-        text: 'furnitures',
+        to: '/mens-clothing',
+        text: "men's clothing",
         className: ''
     },
     {
-        to: '/toys',
-        text: 'toys',
-        className: ''
-    },
-    {
-        to: '/others',
-        text: 'others',
+        to: '/womens-clothing',
+        text: "women's clothing",
         className: ''
     },
 ]
@@ -74,7 +71,7 @@ const Navbar = () => {
     
     const context = useContext(ShoppingCartContext)
 
-    const textDecoration = 'underline underline-offset-4 text-red-800'
+    const textDecoration = 'underline underline-offset-4 font-bold '
 
   return (
     <nav className="flex items-center justify-between w-full fixed z-10 top-0 py-5 px-8 text-sm shadow-lg  bg-slate-50">
@@ -87,7 +84,15 @@ const Navbar = () => {
                     <NavLink 
                         to={link.to}
                         className={({isActive})=> isActive ? textDecoration : undefined }
+                        onClick={() => {
+                            if (link.text === "All" || link.text === "Shop") {
+                              context.setSearchByCategory();
+                            } else {
+                              context.setSearchByCategory(link.text);
+                            }
+                          }}
                     >
+                        {link.className.includes('logo') && <span><CiShop className='h-10 w-10' /></span>}
                         {link.text}
                     </NavLink>
                 </li>

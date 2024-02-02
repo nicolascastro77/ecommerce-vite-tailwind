@@ -1,29 +1,24 @@
-import React, { useContext } from 'react'
-import { ShoppingCartContext } from '../../Context'
-import OrderCard from '../../Components/OrderCard';
+import React, { useContext } from "react";
+import { ShoppingCartContext } from "../../Context";
+import OrdersCard from "../../Components/OrdesCards";
+import { Link } from "react-router-dom";
+import { MdOutlineArrowBackIos } from "react-icons/md";
+
 function MyOrders() {
-
-
-  const {order} = useContext(ShoppingCartContext)
+  const { order } = useContext(ShoppingCartContext);
   return (
-    <div className='flex justify-center'>
-    <div className='w-1/2'>
-      {
-        order && order.length>0 ? order.slice(-1)[0].products.map( product => (
-          <OrderCard 
-              key = {product.id}
-              id = {product.id}
-              title = {product.title}
-              imageUrl = {product.image}
-              price = {product.price}
+    <div className="flex flex-col justify-center w-1/3">
+      {/* <OrdersCard /> */}
+      {order.map((order, index) => (
+        <Link className="my-6" key={index} to={`/my-orders/${index}`}>
+          <OrdersCard
+            totalPrice={order.totalPrice}
+            totalProducts={order.totalProducts}
           />
-        ))
-        : <p>No hay productos en la orden.</p>
-      }
+        </Link>
+      ))}
     </div>
-
-    </div>
-  )
+  );
 }
 
-export default MyOrders
+export default MyOrders;
