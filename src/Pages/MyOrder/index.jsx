@@ -16,7 +16,7 @@ function MyOrder() {
   return (
     <div className="">
       <div className="flex items-center relative justify-center my-10">
-        <Link to="/my-orders" className="absolute left-0">
+        <Link to="/ecommerce-vite-tailwind/my-orders/" className="absolute left-0">
           <MdOutlineArrowBackIos />
         </Link>
         <div>

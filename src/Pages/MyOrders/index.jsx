@@ -10,7 +10,7 @@ function MyOrders() {
     <div className="flex flex-col justify-center w-1/3">
       {/* <OrdersCard /> */}
       {order.map((order, index) => (
-        <Link className="my-6" key={index} to={`/my-orders/${index}`}>
+        <Link className="my-6" key={index} to={`/ecommerce-vite-tailwind/my-orders/${index}`}>
           <OrdersCard
             totalPrice={order.totalPrice}
             totalProducts={order.totalProducts}
