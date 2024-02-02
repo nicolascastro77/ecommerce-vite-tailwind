@@ -10,13 +10,13 @@ You can explore the live eCommerce store [here](https://nicolascastro77.github.i
 ## Screenshots
 
 <div align="center">
-  <img src="./public/screens/img1.png" alt="Screenshot 1" width="400" height="300"/>
-  <img src="./public/screens/img2.png" alt="Screenshot 2" width="400" height="300"/>
+  <img src="./public/screens/img1.png" alt="Screenshot 1" style="max-width: 100%; height: auto; object-fit: contain;"/>
+  <img src="./public/screens/img2.png" alt="Screenshot 2" style="max-width: 100%; height: auto; object-fit: contain;"/>
 </div>
 
 <div align="center">
-  <img src="./public/screens/img3.png" alt="Screenshot 3" width="400" height="300"/>
-  <img src="./public/screens/img4.png" alt="Screenshot 4" width="400" height="300"/>
+  <img src="./public/screens/img3.png" alt="Screenshot 3" style="max-width: 100%; height: auto; object-fit: contain;"/>
+  <img src="./public/screens/img4.png" alt="Screenshot 4" style="max-width: 100%; height: auto; object-fit: contain;"/>
 </div>
 
 ## Features
