@@ -4,39 +4,40 @@ import { NavLink } from 'react-router-dom'
 import {ShoppingCartContext} from '../../Context'
 import { CiShop } from "react-icons/ci";
 
+const rootPath = "/ecommerce-vite-tailwind";
 
 let menu1 = [
     {
-        to: '/',
+        to: `${rootPath}/`,
         text: 'Shop',
         className: 'font-semibold text-lg logo mr-8'
     },
     {
-        to: '/',
+        to: `${rootPath}/`,
         text: 'All',
         className: ''
     },
     {
-        to: '/jewelery',
+        to: `${rootPath}/jewelery`,
         text: 'jewelery',
         className: ''
     },
     {
-        to: '/electronics',
+        to: `${rootPath}/electronics`,
         text: 'electronics',
         className: ''
     },
     {
-        to: '/mens-clothing',
+        to: `${rootPath}/mens-clothing`,
         text: "men's clothing",
         className: ''
     },
     {
-        to: '/womens-clothing',
+        to: `${rootPath}/womens-clothing`,
         text: "women's clothing",
         className: ''
     },
-]
+];
 
 let menu2 = [
     {
@@ -44,26 +45,26 @@ let menu2 = [
         className: 'text-black/60'
     },
     {
-        to: '/my-orders',
+        to: `${rootPath}/my-orders`,
         text: 'My orders',
         className: ''
     },
     {
-        to: '/my-account',
-        text: 'My occount',
+        to: `${rootPath}/my-account`,
+        text: 'My account',
         className: ''
     },
     {
-        to: '/sign-in',
+        to: `${rootPath}/sign-in`,
         text: 'Sign in',
         className: ''
     },
     {
-        to: '/shoppcar',
+        to: `${rootPath}/shoppcar`,
         text: '🛒',
         className: 'cart'
     },
-]
+];
 
 
 
