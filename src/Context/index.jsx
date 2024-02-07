@@ -3,7 +3,39 @@ import React from "react";
 
 export const ShoppingCartContext = createContext();
 
+
+//LocalStorage
+
+export const IinitializeLocalStorage = () => {
+  const accountLocalStorage = localStorage.getItem('account')
+  const signOutINLocalStorage = localStorage.getItem('sign-out')
+
+  let parsedAccount;
+  let parsedSignOut;
+
+  if (accountLocalStorage) {
+    localStorage.setItem('account', JSON.stringify({}))
+    parsedAccount = {}
+  } else {
+    parsedAccount = JSON.parse(accountLocalStorage)
+  }
+
+  if (!signOutINLocalStorage) {
+    localStorage.setItem('sign-out', JSON.stringify(false))
+    parsedSignOut = false
+  } else {
+    parsedSignOut = JSON.parse(signOutINLocalStorage)
+  }
+
+}
+
+
 export const ShoppingCartProvider = ({ children }) => {
+
+  const [account, setAccount] = useState({})
+
+  const [signOut, setSignOut] = useState(false)
+
   // Shopping cart
   const [count, setCount] = useState(0);
 
@@ -138,6 +170,10 @@ export const ShoppingCartProvider = ({ children }) => {
         filteresItems,
         setfilteresItems,
         setSearchByCategory,
+        setSignOut,
+        signOut,
+        setAccount,
+        account
       }}
     >
       {children}

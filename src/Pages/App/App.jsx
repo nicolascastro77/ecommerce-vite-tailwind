@@ -11,7 +11,7 @@ import Layout from "../../Components/Layout";
 import { ShoppingCartContext, ShoppingCartProvider } from "../../Context";
 import CheckoutSideMenu from "../../Components/Checkout SideMenu";
 
-const rootPath = "/ecommerce-vite-tailwind";
+const rootPath = "";
 
 const AppRoutes = () => {
   let routes = useRoutes([
@@ -35,7 +35,7 @@ const AppRoutes = () => {
 const App = () => {
   return (
     <ShoppingCartProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/ecommerce-vite-tailwind">
         <Layout>
           <AppRoutes />
           <Navbar />
