@@ -2,7 +2,7 @@ import React from 'react'
 import { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import {ShoppingCartContext} from '../../Context'
-import { CiShop } from "react-icons/ci";
+import { CiShop, CiUser  } from "react-icons/ci";
 
 
 const rootPath = "";
@@ -117,7 +117,11 @@ const Navbar = () => {
                                     {link.className === 'cart' && <span>{context.cartProducts.length}</span>}
                                 </NavLink>
                             ) : (
-                                    <span>{link.className.includes('email') ? parsedAccount?.email : link.text}</span>
+                                <span className="flex items-center cursor-default">
+                                <CiUser className="text-black" />
+                                {link.className.includes('email') ? parsedAccount?.email : link.text}
+                              </span>
+                                    
                                 )}
                         </li>
                     ))}
@@ -135,8 +139,8 @@ const Navbar = () => {
             ) 
     }
   return (
-    <nav className="flex items-center justify-between w-full fixed z-10 top-0 py-5 px-8 text-sm shadow-lg  bg-slate-50">
-        <ul className='flex gap-3 items-center'>
+    <nav className="flex items-center justify-between w-full fixed z-10 top-0 py-5 px-8 text-base shadow-lg  bg-slate-50">
+        <ul className='flex gap-4 items-center'>
             {menu1.map(link => (
                 <li 
                     key={link.text}
@@ -160,7 +164,7 @@ const Navbar = () => {
                 </li>
             ))}
         </ul>
-        <ul className='flex gap-3 items-center'>
+        <ul className='flex gap-4 items-center'>
             {renderView(menu2)}
         </ul>
     </nav>

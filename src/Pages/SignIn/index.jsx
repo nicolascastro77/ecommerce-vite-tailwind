@@ -2,6 +2,7 @@ import { useContext, useRef } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import { ShoppingCartContext } from '../../Context'
 import { useState } from 'react'
+import { TypeAnimation } from 'react-type-animation';
 
 function SignIn() {
   const context = useContext(ShoppingCartContext)
@@ -39,6 +40,29 @@ function SignIn() {
     handleSignIn()
 	}
  
+
+  const welcomeWords = [
+    'Welcome', // English
+    1000,
+    'Bienvenido', // Spanish
+    1000,
+    'Willkommen', // German
+    1000,
+    'Benvenuto', // Italian
+    1000,
+    'Bienvenue', // French
+    1000,
+    'добро пожаловать', // Russian
+    1000,
+    '歡迎', // Chinese (Traditional)
+    1000,
+    'ようこそ', // Japanese
+    1000,
+    '환영합니다', // Korean
+    1000,
+    'به خوش آمدید', // Persian
+    1000
+  ]
 
   const renderLogIn = () => {
     return (
@@ -133,7 +157,13 @@ const renderView = () => view === 'create-user-info' ? renderCreateUserInfo() : 
 
 return (
   <div className="flex flex-col items-center justify-center mt-10">
-    <h1 className="font-bold text-8xl text-center mb-6">Welcome</h1>
+    <TypeAnimation
+      sequence={welcomeWords}
+      wrapper="span"
+      speed={50}
+      className="font-bold text-8xl text-center mb-6"
+      repeat={Infinity}
+    />
     <div className='flex justify-center my-10'>
       <img className='w-64 h-auto mr-6' src="https://i.ibb.co/WyP0bhj/3d-casual-life-guy-shopping-online.png" alt="" />
       {renderView()}

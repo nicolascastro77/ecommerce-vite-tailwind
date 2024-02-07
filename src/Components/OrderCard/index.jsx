@@ -17,7 +17,7 @@ export default function OrderCard(props) {
     );
   }
   return (
-    <div className="flex p-4  border-gray-300 shadow-md mb-5 ">
+    <div className="flex p-4  border-gray-300 shadow-md mb-5 max-w-4xl">
       {/* Imagen a la izquierda */}
       <div className="flex w-1/4 pr-4 justify-center ">
         <img

@@ -15,16 +15,20 @@ function MyOrder() {
 
   return (
     <div className="">
+      <div></div>
       <div className="flex items-center relative justify-center my-10">
-        <Link to="/ecommerce-vite-tailwind/my-orders/" className="absolute left-0">
+        <Link to="/my-orders/" className="absolute left-0">
           <MdOutlineArrowBackIos />
         </Link>
-        <div>
-          <span className="">MyOrder</span>
+        <div className="">
+          <span className="text-3xl font-regula">MyOrder</span>
         </div>
       </div>
-      <div className="flex justify-center">
-        <div className="flex flex-col w-1/3">
+      <div className="flex justify-evenly items-center ">
+      <div>
+      <img className=" w-60" src="https://i.postimg.cc/fbpQ3Rbp/casual-life-3d-shopping-cart-with-boxes.png" alt="Empty Orders" />
+      </div>
+      <div className="flex flex-col w-1/2 max-h-96  overflow-y-auto">
           {orders.map((product, index) => (
             <OrderCard
               id={!isNaN(indexOrderPath) ? product.id : index}

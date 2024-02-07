@@ -40,7 +40,7 @@ const CheckoutSideMenu = () => {
     <aside
       className={`${
         isCheckoutSideMenuOpen ? "flex shadow-lg" : "hidden"
-      } checkout-side-menu flex-col p-2 overflow-y-scroll fixed right-0 mt-10  bg-white`}
+      } checkout-side-menu flex-col p-2 overflow-y-scroll fixed right-0 mt-10 bg-white`}
     >
       <div className="flex justify-between items-center p-6">
         <h2 className="font-medium text-xl">My Order</h2>
@@ -69,7 +69,7 @@ const CheckoutSideMenu = () => {
           <span> {totalPrice(cartProducts)} $</span>
         </p>
       </div>
-      <Link className="flex justify-center" to="/ecommerce-vite-tailwind/my-orders/last">
+      <Link className="mb-16 flex justify-center" to="my-orders/last">
         <button
           onClick={() => {
             handleCheckout();

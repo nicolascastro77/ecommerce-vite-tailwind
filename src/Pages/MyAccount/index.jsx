@@ -25,6 +25,7 @@ function MyAccount() {
   const renderUserInfo = () => {
     return (
       <div className='flex flex-col w-80 shadow-lg p-6 rounded-lg '>
+        <img className=" w-28 flex self-center mb-6" src="https://i.postimg.cc/QMXH6Skh/3d-casual-life-happy-smiling-man-points-with-finger-to-left-side.png" alt="" />
         <p>
           <span className='font-light text-sm'>Name: </span>
           <span>{parsedAccount?.name}</span>
