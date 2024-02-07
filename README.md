@@ -10,18 +10,18 @@ You can explore the live eCommerce store [here](https://nicolascastro77.github.i
 ## Screenshots
 
 <div align="center">
-    <img src="./public/screens/img1.png" alt="Imagen 1" width="200"/>
-    <img src="./public/screens/img2.png" alt="Imagen 2" width="200"/>
+    <img src="./public/screens/img1.png" alt="Imagen 1" width="400"/>
+    <img src="./public/screens/img2.png" alt="Imagen 2" width="400"/>
 </div>
 
 <div align="center">
-    <img src="./public/screens/img3.png" alt="Imagen 3" width="200"/>
-    <img src="./public/screens/img4.png" alt="Imagen 4" width="200"/>
+    <img src="./public/screens/img3.png" alt="Imagen 3" width="400"/>
+    <img src="./public/screens/img4.png" alt="Imagen 4" width="400"/>
 </div>
 
 <div align="center">
-    <img src="./public/screens/img5.png" alt="Imagen 5" width="200"/>
-    <img src="./public/screens/img6.png" alt="Imagen 6" width="200"/>
+    <img src="./public/screens/img5.png" alt="Imagen 5" width="400"/>
+    <img src="./public/screens/img6.png" alt="Imagen 6" width="400"/>
 </div>
 
 ## Features
